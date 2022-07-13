@@ -11,7 +11,7 @@
 }
 .char__item {
   box-sizing: border-box;
-  width: 100%;
+  width: 95%;
   min-width: 300px;
   max-width: 500px;
   height: 200px;
@@ -20,13 +20,15 @@
   overflow: hidden;
   display: flex;
   justify-self: center;
-  box-shadow: 0 4px 8px #00000080;
+  box-shadow: 4px 4px 8px #00000080;
 }
 .char__image {
   width: 45%;
 }
 .char__image img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .char__info {
   width: 55%;

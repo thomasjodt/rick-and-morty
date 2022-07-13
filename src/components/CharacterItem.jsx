@@ -9,12 +9,12 @@ export const CharacterItem = (props) => {
       <div className='char__info'>
         <h3 className='char__title'>{props.name}</h3>
         <div className='char__description'>
-          <p>ID: {props.id}</p>
-          <p>Status: {props.status}</p>
-          <p>Gender: {props.gender}</p>
-          <p>Species: {props.species}</p>
-          <p>Origin: {props.origin.name}</p>
-          <p>Location: {props.location.name}</p>
+          <p><b>ID:</b> {props.id}</p>
+          <p><b>Status:</b> {props.status}</p>
+          <p><b>Gender:</b> {props.gender}</p>
+          <p><b>Species:</b> {props.species}</p>
+          <p><b>Origin:</b> {props.origin.name}</p>
+          <p><b>Location:</b> {props.location.name}</p>
         </div>
       </div>
     </div>

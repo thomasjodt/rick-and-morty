@@ -1,36 +1,35 @@
-import { useState, useEffect } from 'react'
-import { Pagination } from './Pagination'
 import '../styles/Main.css'
 import { Searchbar } from './Searchbar'
 import { CardsGrid } from './CardsGrid'
+import { Pagination } from './Pagination'
 import { CharacterItem } from './CharacterItem'
+import { useGetCharacters } from '../hooks/useGetCharacters'
 
 export const Main = () => {
-  const [page, setPage] = useState(1)
-  const [loading, setLoading] = useState(true)
-  const [characters, setCharacters] = useState([])
+  const { characters, loading, page, last, setPage } = useGetCharacters()
 
-  useEffect(() => {
-    (async() => {
-      try {
-        const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
-        const data = await res.json()
-        const { results } = data
-        setCharacters(results)
-        console.log(characters)
-        setLoading(false)
-      }
-      catch (error) {console.error(error.message)}
-    })()
-  }, [])
+  const handlePageNavigation = (type) => {
+      (type === 'next') ? setPage(page + 1) :
+      (type === 'prev') ? setPage(page - 1) :
+      (type === 'start') ? setPage(1) :
+      (type === 'end') ? setPage(42) :
+      null
+  }
 
   return (
     <>
       <main className='Main'>
         <h1 className='title'>Rick and Morty</h1>
-        <Searchbar />
+        {/* <Searchbar /> */}
+        <Pagination
+          action={handlePageNavigation}
+          last={last}
+          current={page}
+        />
+
         <CardsGrid loading={loading}>
-          {characters.map((char) => (
+          {loading || (
+            characters.map((char) => (
             <CharacterItem
               key={char.id}
               image={char.image}
@@ -43,8 +42,14 @@ export const Main = () => {
               gender={char.gender}
             />
             ))
+          )
           }
         </CardsGrid>
+        <Pagination
+          action={handlePageNavigation}
+          last={last}
+          current={page}
+        />
       </main>
     </>
   )
