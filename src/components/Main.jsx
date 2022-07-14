@@ -4,6 +4,7 @@ import { CardsGrid } from './CardsGrid'
 import { Pagination } from './Pagination'
 import { CharacterItem } from './CharacterItem'
 import { useGetCharacters } from '../hooks/useGetCharacters'
+import banner from '../assets/banner.png'
 
 export const Main = () => {
   const { characters, loading, page, last, setPage } = useGetCharacters()
@@ -19,7 +20,12 @@ export const Main = () => {
   return (
     <>
       <main className='Main'>
-        <h1 className='title'>Rick and Morty</h1>
+        <header>
+          <div className='title__container'>
+            <h1 className='title'>Rick and Morty</h1>
+          </div>
+          <img className='header__image' src={banner} />
+        </header>
         {/* <Searchbar /> */}
         <Pagination
           action={handlePageNavigation}
