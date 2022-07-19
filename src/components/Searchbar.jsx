@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Searchbar.css'
 
-const BASE_URL = 'https://rickandmortyapi.com/api/character/'
-
-export const Searchbar = () => {
+export const Searchbar = ({ setQuery, setPage }) => {
   const [search, setSearch] = useState('')
-  const [page, setPage] = useState(1)
 
   const submitSearch = (e) => {
     e.preventDefault()
-    // console.log(search)
+    setPage(1)
+    setQuery(search)
     setSearch('')
   }
   return (
@@ -22,11 +20,7 @@ export const Searchbar = () => {
           type='text'
           placeholder='Are you looking for a character?'
         />
-        <button
-          className='search__button'
-        >
-          Search
-        </button>
+        <button className='search__button'>Search</button>
       </div>
     </form>
   )

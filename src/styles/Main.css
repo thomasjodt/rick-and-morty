@@ -2,8 +2,10 @@ header {
   position: relative;
 }
 .header__image {
-  max-width: 100%;
+  display: block;
   height: 100%;
+  margin: 0 auto;
+  max-width: 100%;
   object-fit: cover;
   filter: contrast(0.5) opacity(0.5);
 }

@@ -7,14 +7,19 @@ import { useGetCharacters } from '../hooks/useGetCharacters'
 import banner from '../assets/banner.png'
 
 export const Main = () => {
-  const { characters, loading, page, last, setPage } = useGetCharacters()
+  const { characters, loading, page, last, setPage, setSearch } =
+    useGetCharacters()
 
   const handlePageNavigation = (type) => {
-      (type === 'next') ? setPage(page + 1) :
-      (type === 'prev') ? setPage(page - 1) :
-      (type === 'start') ? setPage(1) :
-      (type === 'end') ? setPage(42) :
-      null
+    type === 'next'
+      ? setPage(page + 1)
+      : type === 'prev'
+      ? setPage(page - 1)
+      : type === 'start'
+      ? setPage(1)
+      : type === 'end'
+      ? setPage(last)
+      : null
   }
 
   return (
@@ -26,36 +31,38 @@ export const Main = () => {
           </div>
           <img className='header__image' src={banner} />
         </header>
-        {/* <Searchbar /> */}
-        <Pagination
-          action={handlePageNavigation}
-          last={last}
-          current={page}
-        />
+        <Searchbar setQuery={setSearch} setPage={setPage} />
+        {last > 1 && (
+          <Pagination
+            action={handlePageNavigation}
+            last={last}
+            current={page}
+          />
+        )}
 
         <CardsGrid loading={loading}>
-          {loading || (
+          {loading ||
             characters.map((char) => (
-            <CharacterItem
-              key={char.id}
-              image={char.image}
-              name={char.name}
-              id={char.id}
-              status={char.status}
-              species={char.species}
-              origin={char.origin}
-              location={char.location}
-              gender={char.gender}
-            />
-            ))
-          )
-          }
+              <CharacterItem
+                key={char.id}
+                image={char.image}
+                name={char.name}
+                id={char.id}
+                status={char.status}
+                species={char.species}
+                origin={char.origin}
+                location={char.location}
+                gender={char.gender}
+              />
+            ))}
         </CardsGrid>
-        <Pagination
-          action={handlePageNavigation}
-          last={last}
-          current={page}
-        />
+        {last > 1 && (
+          <Pagination
+            action={handlePageNavigation}
+            last={last}
+            current={page}
+          />
+        )}
       </main>
     </>
   )
