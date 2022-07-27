@@ -1,5 +1,4 @@
-import React from 'react'
-import '../styles/LoadingSkeleton.css'
+import '../styles/LoadingSkeleton.scss'
 
 export const LoadingSkeleton = () => {
   return (

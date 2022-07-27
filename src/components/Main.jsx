@@ -1,4 +1,5 @@
-import '../styles/Main.css'
+import React from 'react'
+import '../styles/Main.scss'
 import { Searchbar } from './Searchbar'
 import { CardsGrid } from './CardsGrid'
 import { Pagination } from './Pagination'
@@ -14,12 +15,11 @@ export const Main = () => {
     type === 'next'
       ? setPage(page + 1)
       : type === 'prev'
-      ? setPage(page - 1)
-      : type === 'start'
-      ? setPage(1)
-      : type === 'end'
-      ? setPage(last)
-      : null
+        ? setPage(page - 1)
+        : type === 'start'
+          ? setPage(1)
+          : type === 'end' &&
+            setPage(last)
   }
 
   return (

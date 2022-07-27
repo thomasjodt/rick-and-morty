@@ -1,4 +1,5 @@
-import '../styles/Navbar.css'
+import React from 'react'
+import '../styles/Navbar.scss'
 
 export const Navbar = () => {
   return (
@@ -6,14 +7,16 @@ export const Navbar = () => {
       <a
         className='nav__link'
         target='_blank'
-        href='https://rickandmortyapi.com/documentation/'>
-          Docs
+        href='https://rickandmortyapi.com/documentation/' rel='noreferrer'
+      >
+        Docs
       </a>
       <a
         className='nav__link'
         target='_blank'
-        href='https://github.com/thomasjodt/rick-and-morty'>
-          View on Github
+        href='https://github.com/thomasjodt/rick-and-morty' rel='noreferrer'
+      >
+        View on Github
       </a>
     </nav>
   )
