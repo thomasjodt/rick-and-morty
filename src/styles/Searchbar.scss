@@ -14,6 +14,7 @@
   background-color: #fff;
 
   &__input {
+    width: 100%;
     flex-grow: 1;
     border: 1px solid white;
     height: 40px;
@@ -31,10 +32,10 @@
   }
   & img {
     width: 20px;
-    background-color: transparent;
-    object-fit: contain;
     margin: 8px;
     display: block;
+    object-fit: cover;
+    background-color: transparent;
   }
 }
 .search__button:focus,
