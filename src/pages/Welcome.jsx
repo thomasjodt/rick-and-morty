@@ -9,7 +9,7 @@ export const Welcome = () => {
         <div className='banner__container'>
           <img className='banner__image' src={banner} />
           <h1 className='banner__title'>Rick and Morty</h1>
-          <Link to='/' className='banner__button' type='button'>Go to homepage</Link>
+          <Link to='/main' className='banner__button' type='button'>Go to homepage</Link>
         </div>
       </header>
     </>
