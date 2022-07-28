@@ -4,7 +4,7 @@ import { CardsGrid } from '../components/CardsGrid'
 import { Pagination } from '../components/Pagination'
 import { CharacterItem } from '../components/CharacterItem'
 import { useGetCharacters } from '../hooks/useGetCharacters'
-import banner from '../assets/banner.png'
+// import { Tag } from '../components/Tag'
 
 export const Main = () => {
   const { characters, loading, page, last, setPage, setSearch } =
@@ -24,12 +24,6 @@ export const Main = () => {
   return (
     <>
       <main className='Main'>
-        <header>
-          <div className='title__container'>
-            <h1 className='title'>Rick and Morty</h1>
-          </div>
-          <img className='header__image' src={banner} />
-        </header>
         <Searchbar setQuery={setSearch} setPage={setPage} />
         {last > 1 && (
           <Pagination
@@ -38,7 +32,7 @@ export const Main = () => {
             current={page}
           />
         )}
-
+        {/* <div className='tags'><Tag name='test1' /></div> */}
         <CardsGrid loading={loading}>
           {loading ||
             characters.map((char) => (
