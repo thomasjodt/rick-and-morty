@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Navbar.scss'
 
+import { AppContext } from '../context/AppContext'
+
 export const Navbar = () => {
-  const [theme, setTheme] = useState('light')
+  const { theme, setTheme } = useContext(AppContext)
   const toggleTheme = () => { setTheme(theme === 'light' ? 'dark' : 'light') }
-  console.log(theme)
+
   return (
     <nav className='navbar'>
       <a

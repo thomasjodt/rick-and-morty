@@ -3,7 +3,7 @@ import { Main } from '../pages/Main'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Welcome } from '../pages/Welcome'
 import { Layout } from '../layout/Layout'
-import { AppProvider } from '../context/AppProvider'
+import { AppProvider } from '../context/AppContext'
 
 export const App = () => {
   return (

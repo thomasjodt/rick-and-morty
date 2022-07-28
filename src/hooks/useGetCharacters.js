@@ -19,7 +19,6 @@ export const useGetCharacters = () => {
         const { results, info } = data
         setCharacters(results)
         setLast(info.pages)
-        console.log(info)
         setLoading(false)
       } catch (error) {
         console.error(error.message)
