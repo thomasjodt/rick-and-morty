@@ -10,7 +10,7 @@ export const useGetCharacters = () => {
   const [search, setSearch] = useState('')
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       try {
         setCharacters([])
         loading || setLoading(true)
@@ -38,6 +38,6 @@ export const useGetCharacters = () => {
     setPage,
     setCharacters,
     setSearch,
-    setLast,
+    setLast
   }
 }

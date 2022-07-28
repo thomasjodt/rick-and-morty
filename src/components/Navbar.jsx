@@ -1,7 +1,11 @@
-import React from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/Navbar.scss'
 
 export const Navbar = () => {
+  const [theme, setTheme] = useState('light')
+  const toggleTheme = () => { setTheme(theme === 'light' ? 'dark' : 'light') }
+  console.log(theme)
   return (
     <nav className='navbar'>
       <a
@@ -11,6 +15,8 @@ export const Navbar = () => {
       >
         Docs
       </a>
+      <Link className='nav__link' to='/'>Home</Link>
+      <Link className='nav__link' to='/welcome'>Welcome</Link>
       <a
         className='nav__link'
         target='_blank'
@@ -18,6 +24,7 @@ export const Navbar = () => {
       >
         View on Github
       </a>
+      <input onChange={toggleTheme} className='theme__button' type='checkbox' />
     </nav>
   )
 }

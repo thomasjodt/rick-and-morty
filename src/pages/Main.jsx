@@ -1,9 +1,8 @@
-import React from 'react'
 import '../styles/Main.scss'
-import { Searchbar } from './Searchbar'
-import { CardsGrid } from './CardsGrid'
-import { Pagination } from './Pagination'
-import { CharacterItem } from './CharacterItem'
+import { Searchbar } from '../components/Searchbar'
+import { CardsGrid } from '../components/CardsGrid'
+import { Pagination } from '../components/Pagination'
+import { CharacterItem } from '../components/CharacterItem'
 import { useGetCharacters } from '../hooks/useGetCharacters'
 import banner from '../assets/banner.png'
 
