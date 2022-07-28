@@ -1,9 +1,8 @@
-import React from 'react'
 import { Main } from '../pages/Main'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Welcome } from '../pages/Welcome'
 import { Layout } from '../layout/Layout'
+import { Welcome } from '../pages/Welcome'
 import { AppProvider } from '../context/AppContext'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 export const App = () => {
   return (

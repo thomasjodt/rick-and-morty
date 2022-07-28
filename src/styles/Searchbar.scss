@@ -7,24 +7,34 @@
   color: #333;
   outline: none;
   display: flex;
+  align-items: center;
   margin: 0 auto;
   overflow: hidden;
   box-shadow: 0 2px 4px #00000080;
+  background-color: #fff;
 
   &__input {
     flex-grow: 1;
-    border: 1px solid transparent;
+    border: 1px solid white;
     height: 40px;
     padding-left: 12px;
-    border-radius: 5px 0 0 5px;
     outline: none;
   }
   &__button {
     border: none;
     padding-inline: 12px;
     background-color: #0366d6;
+    border-radius: 0 5px 5px 0;
     color: #fff;
     outline: none;
+    align-self: stretch;
+  }
+  & img {
+    width: 20px;
+    background-color: transparent;
+    object-fit: contain;
+    margin: 8px;
+    display: block;
   }
 }
 .search__button:focus,

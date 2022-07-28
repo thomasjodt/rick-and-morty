@@ -37,6 +37,7 @@ export const useGetCharacters = () => {
     setPage,
     setCharacters,
     setSearch,
-    setLast
+    setLast,
+    search
   }
 }

@@ -1,6 +1,6 @@
-import { useContext } from 'react'
 import '../styles/Navbar.scss'
 
+import { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 
 import sun from '../assets/icons/sun.svg'
