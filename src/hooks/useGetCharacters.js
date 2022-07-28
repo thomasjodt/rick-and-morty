@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const BASE_URL = 'https://rickandmortyapi.com/api/character/'
+const BASE_URL = 'https://rickandmortyapi.com/api/character'
 
 export const useGetCharacters = () => {
   const [page, setPage] = useState(1)
