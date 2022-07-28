@@ -1,16 +1,22 @@
 import React from 'react'
-import { Main } from './Main'
-import { Navbar } from './Navbar'
+import { Main } from '../pages/Main'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Welcome } from '../pages/Welcome'
+import { Layout } from '../layout/Layout'
+import { AppProvider } from '../context/AppContext'
 
 export const App = () => {
   return (
     <>
-      <Navbar />
       <Router>
-        <Routes>
-          <Route path='/' element={<Main />} />
-        </Routes>
+        <AppProvider>
+          <Layout>
+            <Routes>
+              <Route path='/' element={<Main />} />
+              <Route path='/welcome' element={<Welcome />} />
+            </Routes>
+          </Layout>
+        </AppProvider>
       </Router>
     </>
   )

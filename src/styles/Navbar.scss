@@ -12,7 +12,36 @@
   font-weight: bold;
   text-decoration: none;
   font-weight: normal;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
-.nav__link:hover {
-  border-bottom: 1px solid #fff;
+.theme__button {
+  appearance: none;
+  width: 48px;
+  height: 24px;
+  border-radius: 12px;
+  position: relative;
+  background-color: #ffb833;
+  transition: 0.4s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: 0.4s ease;
+    box-shadow: 0 0 8px #00000080;
+  }
+
+  &:checked {
+    background-color: #40367c;
+
+    &::before {
+      transform: translateX(24px);
+    }
+  }
 }
