@@ -12,8 +12,8 @@ export const App = () => {
         <AppProvider>
           <Layout>
             <Routes>
-              <Route path='/' element={<Main />} />
-              <Route path='/welcome' element={<Welcome />} />
+              <Route path='/main' element={<Main />} />
+              <Route path='/' element={<Welcome />} />
             </Routes>
           </Layout>
         </AppProvider>

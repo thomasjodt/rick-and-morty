@@ -1,8 +1,10 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
 import '../styles/Navbar.scss'
 
 import { AppContext } from '../context/AppContext'
+
+import sun from '../assets/icons/sun.svg'
+import moon from '../assets/icons/moon.svg'
 
 export const Navbar = () => {
   const { theme, setTheme } = useContext(AppContext)
@@ -17,8 +19,6 @@ export const Navbar = () => {
       >
         Docs
       </a>
-      <Link className='nav__link' to='/'>Home</Link>
-      <Link className='nav__link' to='/welcome'>Welcome</Link>
       <a
         className='nav__link'
         target='_blank'
@@ -26,7 +26,11 @@ export const Navbar = () => {
       >
         View on Github
       </a>
-      <input onChange={toggleTheme} className='theme__button' type='checkbox' />
+      <div className='input__container'>
+        <img src={sun} />
+        <input onChange={toggleTheme} className='theme__button' type='checkbox' />
+        <img src={moon} />
+      </div>
     </nav>
   )
 }

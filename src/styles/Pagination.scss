@@ -7,13 +7,12 @@
   align-items: center;
   gap: 12px;
   padding: 8px;
-  border-radius: 10px;
 }
 .pagination__button {
-  height: 24px;
   width: 48px;
+  padding-block: 4px;
   border-radius: 5px;
-  border: none;
+  border-color: transparent;
   background-color: #0366d6;
   color: #fff;
   user-select: none;
@@ -30,12 +29,12 @@
 }
 
 .pagination__indicator {
-  width: 48px;
+  width: 80px;
   text-align: center;
-  line-height: 44px;
-  border: 2px solid #0366d6;
-  color: #fff;
-  border-radius: 50%;
+  padding-block: 4px;
+  border-radius: 8px;
+  background-color: #c0c0c0;
+  color: #023c7e;
   user-select: none;
   box-sizing: border-box;
 }
