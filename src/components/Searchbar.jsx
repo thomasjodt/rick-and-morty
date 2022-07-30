@@ -30,7 +30,7 @@ export const Searchbar = () => {
           type='text'
           placeholder='Are you looking for a character?'
         />
-        <img onClick={() => setQuery('')} src={deleteIcon} />
+        {query && <img onClick={() => setQuery('')} src={deleteIcon} />}
         <button className='search__button'>Search</button>
       </div>
     </form>
